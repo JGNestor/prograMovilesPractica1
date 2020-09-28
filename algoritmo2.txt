@@ -1,0 +1,18 @@
+void main() 
+{
+  List<int> numeros = [5, 15, 2, 6, 8, 9];
+  int x = 20;
+  bool band=true;
+
+  for (int i = 0; i < numeros.length; i++)   
+    for (int j = 1; j < numeros.length; j++) 
+      if(band)
+        if(numeros[i] + numeros[j] == x) 
+        {
+          print('[${numeros[i]},${numeros[j]}]');
+          band=false;
+        }
+      
+  if(band==true) 
+    print('No hay valores que sumen $x');   
+}

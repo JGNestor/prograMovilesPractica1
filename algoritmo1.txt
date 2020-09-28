@@ -1,0 +1,25 @@
+void main() 
+{
+  List<int> numeros=[10, 9, 8, 7, 1, 5, 6, 3, 4, 2];
+  numeros.sort();
+  int x=10; 
+  int inf=0, sup=numeros.length-1, med;
+  bool band=true;
+  
+  while(inf <= sup && band)
+  {
+    med = ((inf + sup) / 2).round();
+    
+    if(numeros[med] == x)
+    {
+      print('El numero $x se encuentra en la lista');
+      band=false;
+    }
+    else if(x < numeros[med])    
+      sup = med - 1;   
+    else   
+      inf = med + 1;  
+  }
+  if(band)
+    print('El numero $x NO se encuentra en la lista');    
+}
